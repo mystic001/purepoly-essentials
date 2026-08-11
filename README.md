@@ -1,25 +1,138 @@
-# PurePoly Essentials
+# Purepoly Essentials Website
 
-PurePoly Essentials is a focused Next.js storefront for everyday polypropylene products: containers, bins, crates, and totes for homes, kitchens, offices, and small teams.
+Official website for **Purepoly Essentials**, a B2B supplier of raw materials used in nylon and plastic production.
 
-## Built Features
+The website is designed as a lead-generation platform for nylon manufacturers and plastic-processing businesses across Lagos and other Southwest Nigerian markets.
 
-- Responsive storefront with navigation, catalog, materials section, order section, and contact footer
-- Product cards for four core polypropylene essentials
-- Interactive order builder with product, quantity, color selection, bulk discount logic, and mailto quote request
-- Updated app metadata and global styling for the PurePoly brand
+## Business Objectives
 
-## Getting Started
+- Showcase available nylon-production raw materials.
+- Generate enquiries from nylon and plastic manufacturers.
+- Convert Facebook and Instagram advertising traffic into qualified leads.
+- Direct potential customers to WhatsApp.
+- Collect quotation requests.
+- Establish trust and credibility online.
+- Improve visibility on Google for relevant product searches.
 
-Run the development server:
+## Implemented Phase 1
 
-```bash
-npm run dev
+- Homepage with B2B positioning and primary WhatsApp CTA
+- Shared navigation and footer
+- Products page
+- Product landing pages for `/products/hivorex` and `/products/malex`
+- About page
+- Contact page
+- Request quote page
+- Areas we serve page
+- Product-specific WhatsApp messages
+- Client-side quote form that opens a prefilled WhatsApp enquiry
+- SEO metadata for the main routes and product landing pages
+- Responsive mobile-first layout
+
+## Technology Stack
+
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- ESLint
+
+## Application Structure
+
+```text
+src/
+|-- app/
+|   |-- page.tsx
+|   |-- layout.tsx
+|   |-- products/
+|   |   |-- page.tsx
+|   |   `-- [slug]/page.tsx
+|   |-- about/page.tsx
+|   |-- contact/page.tsx
+|   |-- request-quote/page.tsx
+|   `-- areas-we-serve/page.tsx
+|
+|-- components/
+|   |-- Navbar.tsx
+|   |-- Hero.tsx
+|   |-- ProductCard.tsx
+|   |-- WhatsAppButton.tsx
+|   |-- QuoteForm.tsx
+|   `-- Footer.tsx
+|
+`-- data/
+    `-- products.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+## Main Conversion Flow
 
-## Scripts
+```text
+Facebook / Instagram Ad
+        |
+Product Landing Page
+        |
+Product Information
+        |
+WhatsApp / Quote Request
+        |
+Qualified Lead
+        |
+Quotation
+        |
+Customer
+```
+
+## Initial Products
+
+- Hivorex
+- Malex
+
+Each product has a dedicated landing page so ads can point to the exact material being promoted.
+
+## Target Market
+
+Initial market:
+
+- Lagos State
+
+Expansion markets:
+
+- Ogun State
+- Oyo State
+- Osun State
+- Ondo State
+- Ekiti State
+
+Target customers include:
+
+- Nylon manufacturing businesses
+- Polythene manufacturers
+- Plastic film producers
+- Shopping bag manufacturers
+- Printed nylon producers
+- Plastic packaging manufacturers
+
+## Future Roadmap
+
+Phase 2:
+
+- Lead database
+- Email notifications
+- Meta Pixel
+- Google Analytics
+- Google Search Console
+- UTM tracking
+
+Phase 3:
+
+- CRM dashboard
+- Product inventory status
+- Customer accounts
+- Order history
+- Automated WhatsApp workflows
+- Advanced analytics
+
+## Development Commands
 
 ```bash
 npm run dev
@@ -28,9 +141,18 @@ npm run start
 npm run lint
 ```
 
-## Tech Stack
+## Local Development
 
-- Next.js 16.3 App Router
-- React 19
-- TypeScript
-- Tailwind CSS 4
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+## Purepoly Essentials
+
+**Reliable Raw Materials. Reliable Production.**

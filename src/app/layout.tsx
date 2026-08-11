@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PurePoly Essentials",
+  title: {
+    default: "Purepoly Essentials | Nylon & Plastic Raw Materials",
+    template: "%s | Purepoly Essentials",
+  },
   description:
-    "Durable polypropylene containers, crates, totes, and bins for homes, kitchens, and workspaces.",
+    "Supplier of Hivorex, Malex, and other raw materials for nylon and plastic manufacturers in Lagos and Southwest Nigeria.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
