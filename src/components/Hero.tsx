@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { products } from "@/data/products";
 import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Hero() {
+  const featuredMaterials = products.slice(0, 3);
+
   return (
     <section className="border-b border-[#d8d3c6] bg-[#f7f3ea]">
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:py-14">
@@ -14,12 +17,12 @@ export function Hero() {
               Reliable Raw Materials for Nylon & Plastic Production
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-[#53604f]">
-              Purepoly Essentials supplies quality materials including Hivorex, Malex, and related production inputs for
-              nylon and plastic manufacturers in Lagos and across Southwest Nigeria.
+              Purepoly Essentials supplies HDPE, LDPE, and related production inputs for nylon and plastic
+              manufacturers in Lagos and across Southwest Nigeria.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton message="Hello Purepoly Essentials, please send me today's price for Hivorex, Malex and other available materials.">
+            <WhatsAppButton message="Hello Purepoly Essentials, please send me today's price for your available HDPE and LDPE materials.">
               Get Current Price on WhatsApp
             </WhatsAppButton>
             <Link
@@ -40,10 +43,10 @@ export function Hero() {
                 <h2 className="mt-3 max-w-sm text-3xl font-black leading-tight">Materials ready for production teams</h2>
               </div>
               <div className="grid gap-3">
-                {["Hivorex", "Malex", "Plastic processing inputs"].map((item, index) => (
-                  <div className="rounded-md bg-white/12 p-4 shadow-lg" key={item}>
+                {featuredMaterials.map((product, index) => (
+                  <div className="rounded-md bg-white/12 p-4 shadow-lg" key={product.slug}>
                     <div className="flex items-center justify-between gap-4">
-                      <span className="font-black">{item}</span>
+                      <span className="break-words font-black">{product.name}</span>
                       <span className="rounded bg-[#f3c85a] px-2 py-1 text-xs font-black text-[#102317]">
                         Stock {index + 1}
                       </span>

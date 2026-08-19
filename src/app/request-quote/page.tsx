@@ -3,7 +3,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Request Quote",
-  description: "Submit a quotation request for Hivorex, Malex, and other nylon or plastic raw materials.",
+  description: "Submit a quotation request for HDPE, LDPE, and other nylon or plastic raw materials.",
 };
 
 export default function RequestQuotePage() {

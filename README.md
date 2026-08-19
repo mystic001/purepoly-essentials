@@ -19,7 +19,7 @@ The website is designed as a lead-generation platform for nylon manufacturers an
 - Homepage with B2B positioning and primary WhatsApp CTA
 - Shared navigation and footer
 - Products page
-- Product landing pages for `/products/hivorex` and `/products/malex`
+- Product landing pages for each listed HDPE and LDPE material
 - About page
 - Contact page
 - Request quote page
@@ -82,10 +82,20 @@ Quotation
 Customer
 ```
 
-## Initial Products
+## Available Materials
 
-- Hivorex
-- Malex
+- STL HDPE FS700
+- Hivorex FL7000
+- HDPE Lotrene TR144
+- HDPE Marlex TR144
+- HDPE Yulong TR144
+- HDPE Sinopec TR144
+- HDPE SK 8800
+- HDPE Dow
+- LDPE SABIC 4024W
+- LDPE Exxon 4023AT
+- LDPE Tasnee 4025AD
+- LDPE Basell 2227K
 
 Each product has a dedicated landing page so ads can point to the exact material being promoted.
 

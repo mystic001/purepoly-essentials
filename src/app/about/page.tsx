@@ -18,8 +18,8 @@ export default function AboutPage() {
         </div>
         <div className="space-y-5 text-base leading-8 text-[#53604f]">
           <p>
-            Purepoly Essentials connects nylon and plastic-processing businesses with raw materials such as Hivorex,
-            Malex, and related production inputs.
+            Purepoly Essentials connects nylon and plastic-processing businesses with HDPE, LDPE, and related production
+            inputs.
           </p>
           <p>
             The business is focused on clear price communication, availability confirmation, and fast follow-up through

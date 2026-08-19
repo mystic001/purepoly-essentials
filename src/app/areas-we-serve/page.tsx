@@ -20,7 +20,7 @@ export default function AreasWeServePage() {
             <div className="rounded-lg border border-[#d8d3c6] bg-white p-5 shadow-sm" key={area}>
               <h2 className="text-xl font-black text-[#102317]">{area}</h2>
               <p className="mt-3 text-sm leading-6 text-[#53604f]">
-                Enquiries are welcome for Hivorex, Malex, and related nylon or plastic production raw materials.
+                Enquiries are welcome for HDPE, LDPE, and related nylon or plastic production raw materials.
               </p>
             </div>
           ))}

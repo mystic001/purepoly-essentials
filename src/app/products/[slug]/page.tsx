@@ -59,7 +59,7 @@ export default async function ProductLandingPage({ params }: ProductPageProps) {
           <div className="rounded-lg bg-[#102317] p-5 text-white shadow-xl">
             <div className="h-48 rounded-md bg-[#f7f3ea] p-4">
               <div className="flex h-full items-end justify-between rounded border-2 border-[#9faa90] bg-[#e9ede2] p-4 text-[#102317]">
-                <span className="text-3xl font-black">{product.name}</span>
+                <span className="break-words text-3xl font-black">{product.name}</span>
                 <span className="rounded bg-[#f3c85a] px-3 py-2 text-sm font-black">Available</span>
               </div>
             </div>

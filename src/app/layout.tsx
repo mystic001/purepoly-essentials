@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Purepoly Essentials",
   },
   description:
-    "Supplier of Hivorex, Malex, and other raw materials for nylon and plastic manufacturers in Lagos and Southwest Nigeria.",
+    "Supplier of HDPE, LDPE, and other raw materials for nylon and plastic manufacturers in Lagos and Southwest Nigeria.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

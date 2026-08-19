@@ -5,7 +5,7 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Available Hivorex, Malex, and nylon or plastic production raw materials from Purepoly Essentials.",
+  description: "Available HDPE, LDPE, and nylon or plastic production raw materials from Purepoly Essentials.",
 };
 
 export default function ProductsPage() {

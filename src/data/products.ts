@@ -11,31 +11,50 @@ export type Product = {
 
 export const whatsappNumber = "234XXXXXXXXXX";
 
+const southwestLocations = ["Lagos", "Ogun", "Oyo", "Osun", "Ondo", "Ekiti"];
+
+function createMaterialProduct({
+  slug,
+  name,
+  materialType,
+  grade,
+}: {
+  slug: string;
+  name: string;
+  materialType: "HDPE" | "LDPE";
+  grade?: string;
+}): Product {
+  const gradeText = grade ? ` grade ${grade}` : "";
+  const filmText = materialType === "HDPE" ? "film, bag, packaging, and plastic-processing" : "film, packaging, and flexible plastic";
+
+  return {
+    slug,
+    name,
+    headline: `${name} Available for Production`,
+    description: `${name} supply for manufacturers that need dependable ${materialType}${gradeText} material for nylon, ${filmText} operations.`,
+    summary: `Available for B2B buyers that need current pricing, stock confirmation, and reliable ${materialType} supply support.`,
+    uses:
+      materialType === "HDPE"
+        ? ["Nylon production", "Polythene film", "Shopping bag manufacturing", "Plastic packaging"]
+        : ["Nylon production", "Flexible film production", "Plastic packaging", "Polythene applications"],
+    benefits: ["Current price on request", "Bulk supply support", "Pickup and delivery support", "WhatsApp-first response"],
+    locations: southwestLocations,
+  };
+}
+
 export const products: Product[] = [
-  {
-    slug: "hivorex",
-    name: "Hivorex",
-    headline: "Hivorex Available in Lagos",
-    description:
-      "Reliable Hivorex supply for nylon and plastic manufacturers that need consistent material availability for production.",
-    summary:
-      "Suitable for nylon, polythene, shopping bag, and plastic packaging manufacturers buying in production quantities.",
-    uses: ["Nylon production", "Polythene film", "Plastic packaging", "Shopping bag manufacturing"],
-    benefits: ["Bulk quantities available", "Reliable Lagos supply", "Pickup and delivery support", "Competitive market pricing"],
-    locations: ["Lagos", "Ogun", "Oyo"],
-  },
-  {
-    slug: "malex",
-    name: "Malex",
-    headline: "Malex Available for Nylon Production",
-    description:
-      "Malex supply for manufacturers that need dependable raw materials for nylon, plastic film, and packaging operations.",
-    summary:
-      "A practical material option for businesses that need current pricing, quick confirmation, and reliable follow-up.",
-    uses: ["Nylon production", "Printed nylon production", "Plastic film production", "Packaging operations"],
-    benefits: ["Current price on request", "Bulk supply support", "Southwest Nigeria enquiries welcome", "WhatsApp-first response"],
-    locations: ["Lagos", "Ogun", "Osun"],
-  },
+  createMaterialProduct({ slug: "stl-hdpe-fs700", name: "STL HDPE FS700", materialType: "HDPE", grade: "FS700" }),
+  createMaterialProduct({ slug: "hivorex-fl7000", name: "Hivorex FL7000", materialType: "HDPE", grade: "FL7000" }),
+  createMaterialProduct({ slug: "hdpe-lotrene-tr144", name: "HDPE Lotrene TR144", materialType: "HDPE", grade: "TR144" }),
+  createMaterialProduct({ slug: "hdpe-marlex-tr144", name: "HDPE Marlex TR144", materialType: "HDPE", grade: "TR144" }),
+  createMaterialProduct({ slug: "hdpe-yulong-tr144", name: "HDPE Yulong TR144", materialType: "HDPE", grade: "TR144" }),
+  createMaterialProduct({ slug: "hdpe-sinopec-tr144", name: "HDPE Sinopec TR144", materialType: "HDPE", grade: "TR144" }),
+  createMaterialProduct({ slug: "hdpe-sk-8800", name: "HDPE SK 8800", materialType: "HDPE", grade: "8800" }),
+  createMaterialProduct({ slug: "hdpe-dow", name: "HDPE Dow", materialType: "HDPE" }),
+  createMaterialProduct({ slug: "ldpe-sabic-4024w", name: "LDPE SABIC 4024W", materialType: "LDPE", grade: "4024W" }),
+  createMaterialProduct({ slug: "ldpe-exxon-4023at", name: "LDPE Exxon 4023AT", materialType: "LDPE", grade: "4023AT" }),
+  createMaterialProduct({ slug: "ldpe-tasnee-4025ad", name: "LDPE Tasnee 4025AD", materialType: "LDPE", grade: "4025AD" }),
+  createMaterialProduct({ slug: "ldpe-basell-2227k", name: "LDPE Basell 2227K", materialType: "LDPE", grade: "2227K" }),
 ];
 
 export const serviceAreas = ["Lagos State", "Ogun State", "Oyo State", "Osun State", "Ondo State", "Ekiti State"];
