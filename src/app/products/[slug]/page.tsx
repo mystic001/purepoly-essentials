@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -57,11 +58,27 @@ export default async function ProductLandingPage({ params }: ProductPageProps) {
             </div>
           </div>
           <div className="rounded-lg bg-[#102317] p-5 text-white shadow-xl">
-            <div className="h-48 rounded-md bg-[#f7f3ea] p-4">
-              <div className="flex h-full items-end justify-between rounded border-2 border-[#9faa90] bg-[#e9ede2] p-4 text-[#102317]">
-                <span className="break-words text-3xl font-black">{product.name}</span>
-                <span className="rounded bg-[#f3c85a] px-3 py-2 text-sm font-black">Available</span>
-              </div>
+            <div className="relative h-64 overflow-hidden rounded-md bg-[#f7f3ea]">
+              {product.imageSrc ? (
+                <Image
+                  alt={`${product.name} material`}
+                  className="h-full w-full object-contain p-3"
+                  height={520}
+                  priority
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  src={product.imageSrc}
+                  width={720}
+                />
+              ) : (
+                <div className="h-full p-4">
+                  <div className="flex h-full items-end justify-between rounded border-2 border-[#9faa90] bg-[#e9ede2] p-4 text-[#102317]">
+                    <span className="break-words text-3xl font-black">{product.name}</span>
+                  </div>
+                </div>
+              )}
+              <span className="absolute right-4 top-4 rounded bg-[#f3c85a] px-3 py-2 text-sm font-black text-[#102317]">
+                Available
+              </span>
             </div>
             <p className="mt-5 text-sm leading-6 text-[#d9e3d7]">{product.summary}</p>
           </div>

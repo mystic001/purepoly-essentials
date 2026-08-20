@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/data/products";
 import { WhatsAppButton } from "./WhatsAppButton";
@@ -5,10 +6,26 @@ import { WhatsAppButton } from "./WhatsAppButton";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="rounded-lg border border-[#d8d3c6] bg-white p-5 shadow-sm">
-      <div className="mb-5 h-36 rounded-md bg-[#e9ede2] p-4">
-        <div className="flex h-full items-end justify-between rounded border-2 border-[#9faa90] bg-[#f8faf5] p-3">
-          <span className="break-words text-xl font-black text-[#102317]">{product.name}</span>
-          <span className="rounded bg-[#f3c85a] px-2 py-1 text-xs font-black text-[#102317]">B2B</span>
+      <div className="mb-5 h-44 overflow-hidden rounded-md bg-[#e9ede2]">
+        {product.imageSrc ? (
+          <Image
+            alt={`${product.name} material`}
+            className="h-full w-full object-contain p-2"
+            height={360}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            src={product.imageSrc}
+            width={640}
+          />
+        ) : (
+          <div className="h-full p-4">
+            <div className="flex h-full items-end justify-between rounded border-2 border-[#9faa90] bg-[#f8faf5] p-3">
+              <span className="break-words text-xl font-black text-[#102317]">{product.name}</span>
+              <span className="rounded bg-[#f3c85a] px-2 py-1 text-xs font-black text-[#102317]">B2B</span>
+            </div>
+          </div>
+        )}
+        <div className="sr-only">
+          <span>{product.name}</span>
         </div>
       </div>
       <h3 className="break-words text-2xl font-black text-[#102317]">{product.name}</h3>

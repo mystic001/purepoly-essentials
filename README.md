@@ -99,6 +99,22 @@ Customer
 
 Each product has a dedicated landing page so ads can point to the exact material being promoted.
 
+## Product Images
+
+Product images live in:
+
+```text
+public/images/products/
+```
+
+Use the product slug as the filename where possible, for example:
+
+```text
+public/images/products/hdpe-lotrene-tr144.jpg
+```
+
+The website reads image paths from `src/data/products.ts`.
+
 ## Target Market
 
 Initial market:
