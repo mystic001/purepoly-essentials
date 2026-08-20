@@ -29,16 +29,6 @@ export default function Home() {
     <main>
       <Hero />
 
-      <section className="border-b border-[#d8d3c6] bg-[#eef2e8]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-sm font-black text-[#102317] sm:flex-row sm:flex-wrap sm:px-8">
-          {["Current price checks", "Bulk supply enquiries", "Pickup and delivery discussion"].map((item) => (
-            <p className="border-l-2 border-[#12a150] pl-3" key={item}>
-              {item}
-            </p>
-          ))}
-        </div>
-      </section>
-
       <section className="mx-auto max-w-7xl px-5 py-18 sm:px-8">
         <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>

@@ -48,29 +48,33 @@ export function Hero() {
         </div>
 
         <div className="self-center">
-          <div className="overflow-hidden rounded-lg bg-[#f2f4ed]">
-            <div className="px-5 pt-6">
-              <p className="text-sm font-black uppercase tracking-[0.16em] text-[#68785d]">Featured material</p>
-              <h2 className="mt-2 break-words text-3xl font-black text-[#102317]">
+          <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-[#d8d3c6]">
+            <div className="relative aspect-[4/3] bg-[#f8f6ef]">
+              {featuredMaterial?.imageSrc ? (
+                <Image
+                  alt={`${featuredMaterial.name} material packaging`}
+                  className="h-full w-full object-cover"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 48vw, 100vw"
+                  src={featuredMaterial.imageSrc}
+                />
+              ) : null}
+              <span className="absolute left-5 top-5 rounded bg-white/90 px-3 py-2 text-xs font-black uppercase tracking-[0.12em] text-[#102317] shadow-sm">
+                Featured material
+              </span>
+            </div>
+            <div className="p-5">
+              <h2 className="break-words text-3xl font-black leading-tight text-[#102317]">
                 {featuredMaterial?.name ?? "HDPE Material"}
               </h2>
+              <p className="mt-3 text-sm leading-6 text-[#53604f]">
+                Ask for stock, price, pickup, or delivery options in one message.
+              </p>
             </div>
-            {featuredMaterial?.imageSrc ? (
-              <Image
-                alt={`${featuredMaterial.name} material packaging`}
-                className="mx-auto h-[360px] w-full object-contain px-5 pb-6 pt-3"
-                height={560}
-                priority
-                sizes="(min-width: 1024px) 48vw, 100vw"
-                src={featuredMaterial.imageSrc}
-                width={820}
-              />
-            ) : null}
           </div>
           <div className="mt-5 flex flex-col gap-3 border-l-4 border-[#12a150] pl-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm font-bold leading-6 text-[#53604f]">
-              Ask for stock, price, pickup, or delivery options in one message.
-            </p>
+            <p className="text-sm font-bold leading-6 text-[#53604f]">Need a written quotation for your records?</p>
             <Link className="text-sm font-black text-[#0d8541] hover:text-[#102317]" href="/request-quote">
               Request a formal quote
             </Link>
