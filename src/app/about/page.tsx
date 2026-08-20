@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { address, phoneNumber, products } from "@/data/products";
+import { address, phoneNumber } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "About",
@@ -15,8 +15,6 @@ const priorities = [
 ];
 
 export default function AboutPage() {
-  const materialCount = products.length;
-
   return (
     <main>
       <section className="border-b border-[#d8d3c6] bg-white">
@@ -50,18 +48,12 @@ export default function AboutPage() {
                 We help production buyers confirm material availability, price, and next steps without a long wait.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="border-l-4 border-[#12a150] bg-[#fbfaf6] p-5">
-                <p className="text-3xl font-black text-[#102317]">{materialCount}</p>
-                <p className="mt-1 text-sm font-bold text-[#53604f]">listed HDPE and LDPE materials</p>
-              </div>
-              <div className="border-l-4 border-[#12a150] bg-[#fbfaf6] p-5">
-                <p className="text-sm font-black uppercase tracking-[0.14em] text-[#68785d]">Contact</p>
-                <a className="mt-2 block text-xl font-black text-[#102317] hover:text-[#0d8541]" href={`tel:${phoneNumber}`}>
-                  {phoneNumber}
-                </a>
-                <p className="mt-2 text-sm leading-6 text-[#53604f]">{address}</p>
-              </div>
+            <div className="border-l-4 border-[#12a150] bg-[#fbfaf6] p-5">
+              <p className="text-sm font-black uppercase tracking-[0.14em] text-[#68785d]">Contact</p>
+              <a className="mt-2 block text-xl font-black text-[#102317] hover:text-[#0d8541]" href={`tel:${phoneNumber}`}>
+                {phoneNumber}
+              </a>
+              <p className="mt-2 text-sm leading-6 text-[#53604f]">{address}</p>
             </div>
           </div>
         </div>
