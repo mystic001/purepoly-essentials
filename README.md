@@ -1,8 +1,8 @@
 # Purepoly Essentials Website
 
-Official website for **Purepoly Essentials**, a B2B supplier of raw materials used in nylon and plastic production.
+Official website for **Purepoly Essentials**, a supplier of raw materials used in nylon and plastic production.
 
-The website is designed as a lead-generation platform for nylon manufacturers and plastic-processing businesses across Lagos and other Southwest Nigerian markets.
+The website is designed as a lead-generation platform for nylon manufacturers and plastic-processing businesses.
 
 ## Business Objectives
 
@@ -16,14 +16,13 @@ The website is designed as a lead-generation platform for nylon manufacturers an
 
 ## Implemented Phase 1
 
-- Homepage with B2B positioning and primary WhatsApp CTA
+- Homepage with clear manufacturer-focused positioning and primary WhatsApp CTA
 - Shared navigation and footer
 - Products page
 - Product landing pages for each listed HDPE and LDPE material
 - About page
 - Contact page
 - Request quote page
-- Areas we serve page
 - Product-specific WhatsApp messages
 - Client-side quote form that opens a prefilled WhatsApp enquiry
 - SEO metadata for the main routes and product landing pages
@@ -50,7 +49,6 @@ src/
 |   |-- about/page.tsx
 |   |-- contact/page.tsx
 |   |-- request-quote/page.tsx
-|   `-- areas-we-serve/page.tsx
 |
 |-- components/
 |   |-- Navbar.tsx
@@ -115,21 +113,7 @@ public/images/products/hdpe-lotrene-tr144.jpg
 
 The website reads image paths from `src/data/products.ts`.
 
-## Target Market
-
-Initial market:
-
-- Lagos State
-
-Expansion markets:
-
-- Ogun State
-- Oyo State
-- Osun State
-- Ondo State
-- Ekiti State
-
-Target customers include:
+## Target Customers
 
 - Nylon manufacturing businesses
 - Polythene manufacturers

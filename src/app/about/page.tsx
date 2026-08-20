@@ -3,7 +3,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about Purepoly Essentials and its focus on reliable B2B raw-material supply.",
+  description: "Learn about Purepoly Essentials and its focus on reliable raw-material supply.",
 };
 
 export default function AboutPage() {
@@ -23,7 +23,7 @@ export default function AboutPage() {
           </p>
           <p>
             The business is focused on clear price communication, availability confirmation, and fast follow-up through
-            WhatsApp for buyers across Lagos and Southwest Nigeria.
+            WhatsApp for manufacturers and production buyers.
           </p>
           <WhatsAppButton message="Hello Purepoly Essentials, I want to learn more about your raw-material supply.">
             Speak With Purepoly

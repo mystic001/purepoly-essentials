@@ -1,24 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Hero() {
-  const featuredMaterials = products.slice(0, 3);
+  const featuredMaterial = products.find((product) => product.slug === "hivorex-fl7000") ?? products.find((product) => product.imageSrc);
 
   return (
-    <section className="border-b border-[#d8d3c6] bg-[#f7f3ea]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:py-14">
-        <div className="flex flex-col justify-center gap-6">
+    <section className="border-b border-[#d8d3c6] bg-white">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:py-18">
+        <div className="flex flex-col justify-center gap-7">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#68785d]">
-            Raw materials for nylon and plastic production
+            HDPE and LDPE supply for manufacturers
           </p>
           <div className="space-y-4">
             <h1 className="max-w-4xl text-4xl font-black leading-tight text-[#102317] sm:text-5xl lg:text-6xl">
-              Reliable Raw Materials for Nylon & Plastic Production
+              Production materials, priced fast and supplied reliably.
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-[#53604f]">
-              Purepoly Essentials supplies HDPE, LDPE, and related production inputs for nylon and plastic
-              manufacturers in Lagos and across Southwest Nigeria.
+              Purepoly Essentials helps nylon, film, and packaging producers confirm available grades, current pricing,
+              and delivery options without a long back-and-forth.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -32,44 +33,47 @@ export function Hero() {
               View Available Materials
             </Link>
           </div>
+          <div className="grid max-w-xl gap-5 border-y border-[#d8d3c6] py-5 sm:grid-cols-3">
+            {[
+              ["12", "listed materials"],
+              ["HDPE", "film and bag grades"],
+              ["LDPE", "flexible packaging grades"],
+            ].map(([value, label]) => (
+              <div key={label}>
+                <p className="text-2xl font-black text-[#102317]">{value}</p>
+                <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-[#68785d]">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="grid min-h-[430px] gap-4 sm:grid-cols-[1fr_0.75fr]">
-          <div className="relative overflow-hidden rounded-lg bg-[#1c3524] p-5 text-white shadow-xl">
-            <div className="absolute left-8 right-8 top-8 h-20 bg-[#f3c85a]/30 blur-2xl" />
-            <div className="relative flex h-full flex-col justify-between gap-6">
-              <div>
-                <p className="text-sm font-black uppercase tracking-[0.18em] text-[#b9d8ac]">Warehouse supply</p>
-                <h2 className="mt-3 max-w-sm text-3xl font-black leading-tight">Materials ready for production teams</h2>
-              </div>
-              <div className="grid gap-3">
-                {featuredMaterials.map((product, index) => (
-                  <div className="rounded-md bg-white/12 p-4 shadow-lg" key={product.slug}>
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="break-words font-black">{product.name}</span>
-                      <span className="rounded bg-[#f3c85a] px-2 py-1 text-xs font-black text-[#102317]">
-                        Stock {index + 1}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm leading-6 text-[#d9e3d7]">
-                Built for buyers who need price confirmation, availability, delivery discussion, and quick follow-up.
-              </p>
+        <div className="self-center">
+          <div className="overflow-hidden rounded-lg bg-[#f2f4ed]">
+            <div className="px-5 pt-6">
+              <p className="text-sm font-black uppercase tracking-[0.16em] text-[#68785d]">Featured material</p>
+              <h2 className="mt-2 break-words text-3xl font-black text-[#102317]">
+                {featuredMaterial?.name ?? "HDPE Material"}
+              </h2>
             </div>
+            {featuredMaterial?.imageSrc ? (
+              <Image
+                alt={`${featuredMaterial.name} material packaging`}
+                className="mx-auto h-[360px] w-full object-contain px-5 pb-6 pt-3"
+                height={560}
+                priority
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                src={featuredMaterial.imageSrc}
+                width={820}
+              />
+            ) : null}
           </div>
-          <div className="grid gap-4">
-            <div className="rounded-lg bg-[#f3c85a] p-5 text-[#102317]">
-              <p className="text-sm font-black uppercase tracking-[0.14em]">Primary market</p>
-              <p className="mt-4 text-4xl font-black">Lagos</p>
-              <p className="mt-2 text-sm font-bold">Pickup and delivery discussions available</p>
-            </div>
-            <div className="rounded-lg bg-white p-5 shadow-sm">
-              <p className="text-sm font-black uppercase tracking-[0.14em] text-[#68785d]">Lead channel</p>
-              <p className="mt-4 text-3xl font-black text-[#102317]">WhatsApp-first</p>
-              <p className="mt-2 text-sm leading-6 text-[#53604f]">Prefilled product messages for faster enquiries</p>
-            </div>
+          <div className="mt-5 flex flex-col gap-3 border-l-4 border-[#12a150] pl-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm font-bold leading-6 text-[#53604f]">
+              Ask for stock, price, pickup, or delivery options in one message.
+            </p>
+            <Link className="text-sm font-black text-[#0d8541] hover:text-[#102317]" href="/request-quote">
+              Request a formal quote
+            </Link>
           </div>
         </div>
       </div>

@@ -7,12 +7,11 @@ export type Product = {
   imageSrc?: string;
   uses: string[];
   benefits: string[];
-  locations: string[];
 };
 
-export const whatsappNumber = "234XXXXXXXXXX";
-
-const southwestLocations = ["Lagos", "Ogun", "Oyo", "Osun", "Ondo", "Ekiti"];
+export const phoneNumber = "08054812175";
+export const address = "95 Ikola Road, Ota, Ogun State";
+export const whatsappNumber = "2348054812175";
 
 function createMaterialProduct({
   slug,
@@ -35,14 +34,13 @@ function createMaterialProduct({
     name,
     headline: `${name} Available for Production`,
     description: `${name} supply for manufacturers that need dependable ${materialType}${gradeText} material for nylon, ${filmText} operations.`,
-    summary: `Available for B2B buyers that need current pricing, stock confirmation, and reliable ${materialType} supply support.`,
+    summary: `Available for production buyers that need current pricing, stock confirmation, and reliable ${materialType} supply support.`,
     imageSrc,
     uses:
       materialType === "HDPE"
         ? ["Nylon production", "Polythene film", "Shopping bag manufacturing", "Plastic packaging"]
         : ["Nylon production", "Flexible film production", "Plastic packaging", "Polythene applications"],
     benefits: ["Current price on request", "Bulk supply support", "Pickup and delivery support", "WhatsApp-first response"],
-    locations: southwestLocations,
   };
 }
 
@@ -54,7 +52,13 @@ export const products: Product[] = [
     grade: "FS700",
     imageSrc: "/images/products/stl-hdpe-fs700.png",
   }),
-  createMaterialProduct({ slug: "hivorex-fl7000", name: "Hivorex FL7000", materialType: "HDPE", grade: "FL7000" }),
+  createMaterialProduct({
+    slug: "hivorex-fl7000",
+    name: "Hivorex FL7000",
+    materialType: "HDPE",
+    grade: "FL7000",
+    imageSrc: "/images/products/hivorex-fl7000.jpg",
+  }),
   createMaterialProduct({
     slug: "hdpe-lotrene-tr144",
     name: "HDPE Lotrene TR144",
@@ -125,8 +129,6 @@ export const products: Product[] = [
     imageSrc: "/images/products/ldpe-basell-2227k.jpg",
   }),
 ];
-
-export const serviceAreas = ["Lagos State", "Ogun State", "Oyo State", "Osun State", "Ondo State", "Ekiti State"];
 
 export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);

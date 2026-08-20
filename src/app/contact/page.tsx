@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { QuoteForm } from "@/components/QuoteForm";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { address, phoneNumber } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,6 +18,17 @@ export default function ContactPage() {
           <p className="mt-4 text-sm leading-6 text-[#53604f]">
             WhatsApp is the fastest contact channel for product-specific pricing and availability.
           </p>
+          <div className="mt-6 space-y-3 border-l-4 border-[#12a150] pl-5 text-sm leading-6 text-[#53604f]">
+            <p>
+              <span className="font-black text-[#102317]">Phone:</span>{" "}
+              <a className="font-bold text-[#0d8541] hover:text-[#102317]" href={`tel:${phoneNumber}`}>
+                {phoneNumber}
+              </a>
+            </p>
+            <p>
+              <span className="font-black text-[#102317]">Address:</span> {address}
+            </p>
+          </div>
           <WhatsAppButton
             className="mt-5"
             message="Hello Purepoly Essentials, please send me current prices and availability."

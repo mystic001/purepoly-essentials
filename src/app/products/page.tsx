@@ -14,16 +14,16 @@ export default function ProductsPage() {
       <section className="border-b border-[#d8d3c6] bg-white">
         <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#68785d]">Products</p>
-          <h1 className="mt-2 max-w-3xl text-4xl font-black leading-tight text-[#102317] sm:text-5xl">
-            Available materials for nylon and plastic manufacturers
+          <h1 className="mt-2 max-w-3xl text-4xl font-black leading-tight text-[#102317] sm:text-5xl lg:text-6xl">
+            Available materials for production buyers
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-[#53604f]">
-            Product pages are built for direct Facebook and Instagram ad traffic, so each material can generate a clear,
-            trackable enquiry.
+            Choose the material you need, check the product details, or send a WhatsApp request for current price and
+            availability.
           </p>
         </div>
       </section>
-      <section className="mx-auto grid max-w-7xl gap-5 px-5 py-14 sm:px-8 md:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl gap-5 px-5 py-12 sm:px-8 md:grid-cols-2 xl:grid-cols-3">
         {products.map((product) => (
           <ProductCard key={product.slug} product={product} />
         ))}
